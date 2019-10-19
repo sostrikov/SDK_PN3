@@ -16,7 +16,7 @@ namespace ParsecIntegrationClient
         {
             InitializeComponent();
         }
-
+		//Регистрация
         private void btnStartSession_Click(object sender, EventArgs e)
         {
             ClearResult();
@@ -1173,6 +1173,7 @@ namespace ParsecIntegrationClient
 			this.button1.TabIndex = 61;
 			this.button1.Text = "VisitorRequest";
 			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// Form1
 			// 
@@ -1319,6 +1320,51 @@ namespace ParsecIntegrationClient
 		private void txtPassword_TextChanged(object sender, EventArgs e)
 		{
 
+		}
+		//Заявка на пропуск
+		private void button1_Click(object sender, EventArgs e)
+		{
+			ClearResult();
+			IntegrationService integrService = new IntegrationService();
+			string domain = "SYSTEM";
+			string userName = "Ostrikov";
+			string password = "QAZwsx111";
+			SessionResult res = integrService.OpenSession(domain, userName, password);
+			Guid SessionID = new Guid(txtCommonSessionID.Text);
+			
+
+			//1. Создаем физлицо будущего посетителя
+			string mySessionID = res.Value.SessionID.ToString();
+			string myRootOrgUnitID = res.Value.RootOrgUnitID.ToString();
+			//txtTerraID.Text = res.Value.RootTerritoryID.ToString();
+
+			Person myGuest = new Person();
+			myGuest.ID = Guid.Empty;
+			myGuest.LAST_NAME = "Трамп";
+			myGuest.FIRST_NAME = "Дональд";
+			myGuest.MIDDLE_NAME = "Обамович";
+			myGuest.TAB_NUM = "guest-0001";
+			myGuest.ORG_ID = Guid.Parse(myRootOrgUnitID);
+
+			//2. Создаем посетителя из физлица (Голубая иконка)
+			var res2 = integrService.CreateVisitor(SessionID, myGuest );
+
+
+			//3. Создаем заявку на проход
+			VisitorRequest myVisitor = new VisitorRequest();
+
+			myVisitor.NUMBER = 777;
+			myVisitor.PERSON_INFO ="Очень важный пассажир";
+			myVisitor.PURPOSE = "Деловая"; //Цель визита
+			//myVisitor.STATUS =;
+			//myVisitor.ADMIT_START =;
+			//myVisitor.ADMIT_END =;
+			//myVisitor.DATE = ;
+
+			//Отправляем запрос на Parsec Заявку
+			var res3 = integrService.CreateVisitorRequest(SessionID,myVisitor);
+		   
+			
 		}
 	}
 }
