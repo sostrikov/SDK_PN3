@@ -1100,6 +1100,7 @@ namespace ParsecIntegrationClient
 			this.dtpFrom.Name = "dtpFrom";
 			this.dtpFrom.Size = new System.Drawing.Size(155, 20);
 			this.dtpFrom.TabIndex = 53;
+			this.dtpFrom.ValueChanged += new System.EventHandler(this.dtpFrom_ValueChanged);
 			// 
 			// dtpTo
 			// 
@@ -1321,6 +1322,7 @@ namespace ParsecIntegrationClient
 		{
 
 		}
+		//============================Остриков============================================
 		//Заявка на пропуск
 		private void button1_Click(object sender, EventArgs e)
 		{
@@ -1359,12 +1361,17 @@ namespace ParsecIntegrationClient
 			//myVisitor.STATUS =;
 			//myVisitor.ADMIT_START =;
 			//myVisitor.ADMIT_END =;
-			//myVisitor.DATE = ;
+			myVisitor.DATE = new DateTime(2019, 10, 21);
 
 			//Отправляем запрос на Parsec Заявку
 			var res3 = integrService.CreateVisitorRequest(SessionID,myVisitor);
 		   
 			
+		}
+
+		private void dtpFrom_ValueChanged(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

@@ -15,7 +15,7 @@ namespace ParsecIntegrationClient
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Application.Run(new Form1());
+			//Application.Run(new Form1());
 			/*
             using (LoginForm frmLogin = new LoginForm())
             {
@@ -27,8 +27,11 @@ namespace ParsecIntegrationClient
 			// MainForm frmMain = new MainForm();
 			// Application.Run(frmMain);
 
-			Form1 startform = new Form1();
-			Application.Run(startform);
+			//Form1 startform = new Form1();
+
+			//============Ostrikov================
+			Form2 ostform = new Form2();
+			Application.Run(ostform);
         }
     }
 }
