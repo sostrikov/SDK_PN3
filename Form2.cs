@@ -53,7 +53,7 @@ namespace ParsecIntegrationClient
 			//1. Создаем физлицо будущего посетителя
 			Person myGuest = new Person
 			{
-				//ID = Guid.Empty,
+				ID = Guid.NewGuid(),
 				LAST_NAME = "Трамп2",
 				FIRST_NAME = "Дональд",
 				MIDDLE_NAME = "Обамович",
@@ -66,31 +66,43 @@ namespace ParsecIntegrationClient
 
 			//2. Создаем посетителя из физлица (Голубая иконка)
 			//integrService.CreatePerson(mySessionIDGuid, myGuest);
-			//integrService.CreateVehicleAsync(mySessionIDGuid, myGuest);
-			integrService.CreateVisitor(mySessionIDGuid, myGuest);
-
+			//integrService.CreateVehicle(mySessionIDGuid, myGuest);
+			var res2 = integrService.CreateVisitor(mySessionIDGuid, myGuest);
+		
 			textBox2.Text = "Ok!";
-			/*
 
-						//3. Создаем заявку на проход
-						VisitorRequest myVisitor = new VisitorRequest();
 
-						myVisitor.NUMBER = 777;
-						myVisitor.PERSON_INFO = "Очень важный пассажир";
-						myVisitor.PURPOSE = "Деловая"; //Цель визита
-													   //myVisitor.STATUS =;
-													   //myVisitor.ADMIT_START =;
-													   //myVisitor.ADMIT_END =;
-						myVisitor.DATE = new DateTime(2019, 10, 21);
+			//3. Создаем заявку на проход
+			VisitorRequest myVisitor = new VisitorRequest
+			{
+				PERSON_ID = myGuest.ID,
+				ORGUNIT_ID = myGuest.ORG_ID,
+				NUMBER = 777,
+				PERSON_INFO = "Очень важный пассажир",
+				PURPOSE = "Деловая", //Цель визита
+				//STATUS =,
+				ADMIT_START = new DateTime(2019, 10, 22),
+				ADMIT_END =new DateTime(2019, 10, 22),
+				DATE = new DateTime(2019, 10, 22)
+			};
 
-						//Отправляем запрос на Parsec Заявку
-						var res3 = integrService.CreateVisitorRequest(mySessionIDGuid, myVisitor);
-			*/
+			//Отправляем запрос на Parsec Заявку
+			var res3 = integrService.CreateVisitorRequest(mySessionIDGuid, myVisitor);
+			
 		}
 
 		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
 
+		}
+		/// <summary>
+		/// Выход по кажатию кнопки
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void button2_Click(object sender, EventArgs e)
+		{
+			Application.Exit();
 		}
 	}
 }
