@@ -19,12 +19,16 @@ namespace ParsecIntegrationClient
 {
 	public partial class Form2 : Form
 	{
+
+		private Guid _shownOrgUnitID = Guid.Empty;
 		public Form2()
 		{
 			InitializeComponent();
 			textBox1.Text = "SessionId";
 			textBox2.Text = "OU";
 		}
+
+		
 
 		private void button1_Click(object sender, EventArgs e)
 		{
@@ -106,7 +110,7 @@ namespace ParsecIntegrationClient
 
 			//Отправляем запрос на Parsec Заявку
 			var res3 = integrService.CreateVisitorRequest(mySessionIDGuid, myVisitor);
-			
+			//return mySessionIDGuid;
 		}
 
 		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)

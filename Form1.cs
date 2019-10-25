@@ -722,6 +722,7 @@ namespace ParsecIntegrationClient
 			this.txtContinueSessionRes.Name = "txtContinueSessionRes";
 			this.txtContinueSessionRes.Size = new System.Drawing.Size(65, 20);
 			this.txtContinueSessionRes.TabIndex = 7;
+			this.txtContinueSessionRes.TextChanged += new System.EventHandler(this.txtContinueSessionRes_TextChanged);
 			// 
 			// btnGetRootOrgUnit
 			// 
@@ -1370,6 +1371,11 @@ namespace ParsecIntegrationClient
 		}
 
 		private void dtpFrom_ValueChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void txtContinueSessionRes_TextChanged(object sender, EventArgs e)
 		{
 
 		}

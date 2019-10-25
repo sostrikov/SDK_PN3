@@ -1,7 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParsecIntegrationClient", "ParsecIntegrationClient.csproj", "{063C5A58-A382-4260-A3BA-41F2A3C81CBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2", "..\ConsoleApp2\ConsoleApp2.csproj", "{8A6B589E-6BCE-4781-B6B8-3597F10BB0C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StructFromXML", "StructFromXML\StructFromXML.csproj", "{FF461293-0D73-4B48-BAAB-B355604A7997}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,8 +19,19 @@ Global
 		{063C5A58-A382-4260-A3BA-41F2A3C81CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{063C5A58-A382-4260-A3BA-41F2A3C81CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{063C5A58-A382-4260-A3BA-41F2A3C81CBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A6B589E-6BCE-4781-B6B8-3597F10BB0C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A6B589E-6BCE-4781-B6B8-3597F10BB0C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A6B589E-6BCE-4781-B6B8-3597F10BB0C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A6B589E-6BCE-4781-B6B8-3597F10BB0C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF461293-0D73-4B48-BAAB-B355604A7997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF461293-0D73-4B48-BAAB-B355604A7997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF461293-0D73-4B48-BAAB-B355604A7997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF461293-0D73-4B48-BAAB-B355604A7997}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66A0239E-11C4-433A-8CE9-5FC02217035B}
 	EndGlobalSection
 EndGlobal

@@ -16,22 +16,24 @@ namespace ParsecIntegrationClient
             Application.SetCompatibleTextRenderingDefault(false);
 
 			//Application.Run(new Form1());
-			/*
+			
             using (LoginForm frmLogin = new LoginForm())
             {
                 if (frmLogin.ShowDialog() != DialogResult.OK)
                     return;
                 frmLogin.Close();
             }
-			*/
-			// MainForm frmMain = new MainForm();
-			// Application.Run(frmMain);
+			
+			 MainForm frmMain = new MainForm();
+			 Application.Run(frmMain);
 
 			//Form1 startform = new Form1();
 
 			//============Ostrikov================
-			Form2 ostform = new Form2();
-			Application.Run(ostform);
+			//Form2 ostform = new Form2();
+			//Application.Run(ostform);
+
+			
         }
     }
 }
