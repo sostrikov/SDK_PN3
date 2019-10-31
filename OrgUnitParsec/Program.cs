@@ -115,7 +115,8 @@ namespace OrgUnitParsec
 
                             // получаем атрибут Guid
                             XmlNode attr4 = xnode.Attributes.GetNamedItem("guid");
-                            PGuid1.Add(new Guid(attr4.Value));
+                            PGuid1.Add(new Guid(attr4.Value)); //Формируем список Guid 1 уровня
+                            Console.WriteLine(PGuid1.Last());
 
                             //Заносим результат в  Parsec OrgUnit
                             if (attr1 != null && attr2 != null && attr3 != null && attr4 != null)
@@ -124,7 +125,7 @@ namespace OrgUnitParsec
                                 newOU.ID = new Guid(attr4.Value);
                                 newOU.NAME = attr1.Value;
                                 newOU.PARENT_ID = bmstuRoot;
-                                GuidResult ouresult = integrService.CreateOrgUnit(sessionGUID, newOU);
+                                //GuidResult ouresult = integrService.CreateOrgUnit(sessionGUID, newOU);
                             }
 
                         }
@@ -155,9 +156,11 @@ namespace OrgUnitParsec
                                     newOU.ID = new Guid(attr4.Value);
                                     newOU.NAME = attr1.Value;
                                     newOU.PARENT_ID = PGuid1.Last();//Последний элемент в списке ГУИДов 1 уровня
+                                    Console.WriteLine($"2ой уровень {newOU.ID} {newOU.NAME} {newOU.PARENT_ID}");
 
-                                    GuidResult ouresult = integrService.CreateOrgUnit(sessionGUID, newOU);
+                                   // GuidResult ouresult = integrService.CreateOrgUnit(sessionGUID, newOU);
                                 }
+                                else Console.WriteLine("OU1 Empty");
 
 
                             }
@@ -188,8 +191,9 @@ namespace OrgUnitParsec
                                         newOU.NAME = attr1.Value;
                                         newOU.PARENT_ID = PGuid2.Last();//Последний элемент в списке ГУИДов 2 уровня
 
-                                        GuidResult ouresult = integrService.CreateOrgUnit(sessionGUID, newOU);
+                                       //GuidResult ouresult = integrService.CreateOrgUnit(sessionGUID, newOU);
                                     }
+                                    else Console.WriteLine("OU2 Empty");
                                 }
 
                                 // выбираем все дочерние узлы 4-го уровня
@@ -219,7 +223,7 @@ namespace OrgUnitParsec
                                             newOU.NAME = attr1.Value;
                                             newOU.PARENT_ID = PGuid3.Last();//Последний элемент в списке ГУИДов 3 уровня
 
-                                            GuidResult ouresult = integrService.CreateOrgUnit(sessionGUID, newOU);
+                                            //GuidResult ouresult = integrService.CreateOrgUnit(sessionGUID, newOU);
                                         }
 
 

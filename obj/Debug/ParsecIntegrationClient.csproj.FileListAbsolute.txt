@@ -16,7 +16,6 @@ D:\GIT\SDK_PN3\obj\Debug\ParsecIntegrationClient.PersonHierarhy.resources
 D:\GIT\SDK_PN3\obj\Debug\ParsecIntegrationClient.Properties.Resources.resources
 D:\GIT\SDK_PN3\obj\Debug\ParsecIntegrationClient.TerritoryHierarhy.resources
 D:\GIT\SDK_PN3\obj\Debug\ParsecIntegrationClient.csproj.GenerateResource.cache
-D:\GIT\SDK_PN3\obj\Debug\ParsecIntegrationClient.csproj.CoreCompileInputs.cache
 D:\GIT\SDK_PN3\obj\Debug\ParsecIntegrationClient.exe
 D:\GIT\SDK_PN3\obj\Debug\ParsecIntegrationClient.pdb
 D:\GIT\SDK_PN4.git\bin\Debug\ParsecIntegrationClient.exe.config
@@ -40,3 +39,4 @@ D:\GIT\SDK_PN4.git\obj\Debug\ParsecIntegrationClient.csproj.GenerateResource.cac
 D:\GIT\SDK_PN4.git\obj\Debug\ParsecIntegrationClient.exe
 D:\GIT\SDK_PN4.git\obj\Debug\ParsecIntegrationClient.pdb
 D:\GIT\SDK_PN4.git\obj\Debug\ParsecIntegrationClient.Form2.resources
+D:\git\SDK_PN3\obj\Debug\ParsecIntegrationClient.Form2.resources

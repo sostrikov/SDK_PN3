@@ -9,3 +9,14 @@ D:\GIT\SDK_PN4.git\OrgUnitParsec\obj\Debug\OrgUnitParsec.csproj.CopyComplete
 D:\GIT\SDK_PN4.git\OrgUnitParsec\obj\Debug\OrgUnitParsec.exe
 D:\GIT\SDK_PN4.git\OrgUnitParsec\obj\Debug\OrgUnitParsec.pdb
 D:\GIT\SDK_PN4.git\OrgUnitParsec\bin\Debug\struct.xml
+D:\git\SDK_PN3\OrgUnitParsec\bin\Debug\struct.xml
+D:\git\SDK_PN3\OrgUnitParsec\bin\Debug\OrgUnitParsec.exe.config
+D:\git\SDK_PN3\OrgUnitParsec\bin\Debug\OrgUnitParsec.exe
+D:\git\SDK_PN3\OrgUnitParsec\bin\Debug\OrgUnitParsec.pdb
+D:\git\SDK_PN3\OrgUnitParsec\bin\Debug\ParsecIntegrationClient.exe
+D:\git\SDK_PN3\OrgUnitParsec\bin\Debug\ParsecIntegrationClient.pdb
+D:\git\SDK_PN3\OrgUnitParsec\bin\Debug\ParsecIntegrationClient.exe.config
+D:\git\SDK_PN3\OrgUnitParsec\obj\Debug\OrgUnitParsec.csprojAssemblyReference.cache
+D:\git\SDK_PN3\OrgUnitParsec\obj\Debug\OrgUnitParsec.csproj.CopyComplete
+D:\git\SDK_PN3\OrgUnitParsec\obj\Debug\OrgUnitParsec.exe
+D:\git\SDK_PN3\OrgUnitParsec\obj\Debug\OrgUnitParsec.pdb

@@ -5,3 +5,10 @@ D:\GIT\SDK_PN4.git\StructFromXML\obj\Debug\StructFromXML.csprojAssemblyReference
 D:\GIT\SDK_PN4.git\StructFromXML\obj\Debug\StructFromXML.exe
 D:\GIT\SDK_PN4.git\StructFromXML\obj\Debug\StructFromXML.pdb
 D:\GIT\SDK_PN4.git\StructFromXML\bin\Debug\struct.xml
+D:\git\SDK_PN3\StructFromXML\bin\Debug\struct.xml
+D:\git\SDK_PN3\StructFromXML\bin\Debug\StructFromXML.exe.config
+D:\git\SDK_PN3\StructFromXML\bin\Debug\StructFromXML.exe
+D:\git\SDK_PN3\StructFromXML\bin\Debug\StructFromXML.pdb
+D:\git\SDK_PN3\StructFromXML\obj\Debug\StructFromXML.csprojAssemblyReference.cache
+D:\git\SDK_PN3\StructFromXML\obj\Debug\StructFromXML.exe
+D:\git\SDK_PN3\StructFromXML\obj\Debug\StructFromXML.pdb
