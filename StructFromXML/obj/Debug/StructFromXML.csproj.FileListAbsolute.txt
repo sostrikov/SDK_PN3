@@ -2,7 +2,6 @@ D:\GIT\SDK_PN4.git\StructFromXML\bin\Debug\StructFromXML.exe.config
 D:\GIT\SDK_PN4.git\StructFromXML\bin\Debug\StructFromXML.exe
 D:\GIT\SDK_PN4.git\StructFromXML\bin\Debug\StructFromXML.pdb
 D:\GIT\SDK_PN4.git\StructFromXML\obj\Debug\StructFromXML.csprojAssemblyReference.cache
-D:\GIT\SDK_PN4.git\StructFromXML\obj\Debug\StructFromXML.csproj.CoreCompileInputs.cache
 D:\GIT\SDK_PN4.git\StructFromXML\obj\Debug\StructFromXML.exe
 D:\GIT\SDK_PN4.git\StructFromXML\obj\Debug\StructFromXML.pdb
 D:\GIT\SDK_PN4.git\StructFromXML\bin\Debug\struct.xml

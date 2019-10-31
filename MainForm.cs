@@ -427,77 +427,77 @@ namespace ParsecIntegrationClient
         /// </summary>
         private void InitializeComponent()
         {
-			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-			this.tlFilePopup = new System.Windows.Forms.ToolStripMenuItem();
-			this.tlChangeUser = new System.Windows.Forms.ToolStripMenuItem();
-			this.tsExit = new System.Windows.Forms.ToolStripMenuItem();
-			this.tlEditPopup = new System.Windows.Forms.ToolStripMenuItem();
-			this.tsRefreshList = new System.Windows.Forms.ToolStripMenuItem();
-			this.tsEnter = new System.Windows.Forms.ToolStripMenuItem();
-			this.tsBack = new System.Windows.Forms.ToolStripMenuItem();
-			this.tsOpenCard = new System.Windows.Forms.ToolStripMenuItem();
-			this.tsCreateOrgUnit = new System.Windows.Forms.ToolStripMenuItem();
-			this.tsCreatePerson = new System.Windows.Forms.ToolStripMenuItem();
-			this.tsDelete = new System.Windows.Forms.ToolStripMenuItem();
-			this.tlEventsPopup = new System.Windows.Forms.ToolStripMenuItem();
-			this.tsEvents = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-			this.получитьСостояниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.stStatus = new System.Windows.Forms.StatusStrip();
-			this.tsUserStatus = new System.Windows.Forms.ToolStripStatusLabel();
-			this.tsStatusString = new System.Windows.Forms.ToolStripStatusLabel();
-			this.lvPersons = new System.Windows.Forms.ListView();
-			this.colLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.colFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.colMiddleName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.colTabNum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.ilLargeIcons = new System.Windows.Forms.ImageList(this.components);
-			this.ilSmallIcons = new System.Windows.Forms.ImageList(this.components);
-			this.menuStrip1.SuspendLayout();
-			this.stStatus.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// menuStrip1
-			// 
-			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.tlFilePopup = new System.Windows.Forms.ToolStripMenuItem();
+            this.tlChangeUser = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tlEditPopup = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsRefreshList = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsEnter = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsBack = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsOpenCard = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsCreateOrgUnit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsCreatePerson = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.tlEventsPopup = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsEvents = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.получитьСостояниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stStatus = new System.Windows.Forms.StatusStrip();
+            this.tsUserStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsStatusString = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lvPersons = new System.Windows.Forms.ListView();
+            this.colLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colFirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colMiddleName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colTabNum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ilLargeIcons = new System.Windows.Forms.ImageList(this.components);
+            this.ilSmallIcons = new System.Windows.Forms.ImageList(this.components);
+            this.menuStrip1.SuspendLayout();
+            this.stStatus.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tlFilePopup,
             this.tlEditPopup,
             this.tlEventsPopup,
             this.toolStripMenuItem1});
-			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(659, 24);
-			this.menuStrip1.TabIndex = 0;
-			this.menuStrip1.Text = "menuStrip1";
-			// 
-			// tlFilePopup
-			// 
-			this.tlFilePopup.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(659, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // tlFilePopup
+            // 
+            this.tlFilePopup.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tlChangeUser,
             this.tsExit});
-			this.tlFilePopup.Name = "tlFilePopup";
-			this.tlFilePopup.Size = new System.Drawing.Size(48, 20);
-			this.tlFilePopup.Text = "Файл";
-			// 
-			// tlChangeUser
-			// 
-			this.tlChangeUser.Name = "tlChangeUser";
-			this.tlChangeUser.Size = new System.Drawing.Size(188, 22);
-			this.tlChangeUser.Text = "Смена пользователя";
-			this.tlChangeUser.Click += new System.EventHandler(this.tlChangeUser_Click);
-			// 
-			// tsExit
-			// 
-			this.tsExit.Name = "tsExit";
-			this.tsExit.Size = new System.Drawing.Size(188, 22);
-			this.tsExit.Text = "Выход";
-			this.tsExit.Click += new System.EventHandler(this.tsExit_Click);
-			// 
-			// tlEditPopup
-			// 
-			this.tlEditPopup.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tlFilePopup.Name = "tlFilePopup";
+            this.tlFilePopup.Size = new System.Drawing.Size(48, 20);
+            this.tlFilePopup.Text = "Файл";
+            // 
+            // tlChangeUser
+            // 
+            this.tlChangeUser.Name = "tlChangeUser";
+            this.tlChangeUser.Size = new System.Drawing.Size(188, 22);
+            this.tlChangeUser.Text = "Смена пользователя";
+            this.tlChangeUser.Click += new System.EventHandler(this.tlChangeUser_Click);
+            // 
+            // tsExit
+            // 
+            this.tsExit.Name = "tsExit";
+            this.tsExit.Size = new System.Drawing.Size(188, 22);
+            this.tsExit.Text = "Выход";
+            this.tsExit.Click += new System.EventHandler(this.tsExit_Click);
+            // 
+            // tlEditPopup
+            // 
+            this.tlEditPopup.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsRefreshList,
             this.tsEnter,
             this.tsBack,
@@ -505,188 +505,189 @@ namespace ParsecIntegrationClient
             this.tsCreateOrgUnit,
             this.tsCreatePerson,
             this.tsDelete});
-			this.tlEditPopup.Name = "tlEditPopup";
-			this.tlEditPopup.Size = new System.Drawing.Size(108, 20);
-			this.tlEditPopup.Text = "Редактирование";
-			// 
-			// tsRefreshList
-			// 
-			this.tsRefreshList.Name = "tsRefreshList";
-			this.tsRefreshList.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F5)));
-			this.tsRefreshList.Size = new System.Drawing.Size(243, 22);
-			this.tsRefreshList.Text = "Обновить список";
-			this.tsRefreshList.Click += new System.EventHandler(this.tsRefreshList_Click);
-			// 
-			// tsEnter
-			// 
-			this.tsEnter.Name = "tsEnter";
-			this.tsEnter.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
-			this.tsEnter.Size = new System.Drawing.Size(243, 22);
-			this.tsEnter.Text = "Открыть";
-			this.tsEnter.Click += new System.EventHandler(this.tsEnter_Click);
-			// 
-			// tsBack
-			// 
-			this.tsBack.Name = "tsBack";
-			this.tsBack.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
-			this.tsBack.Size = new System.Drawing.Size(243, 22);
-			this.tsBack.Text = "Назад";
-			this.tsBack.Click += new System.EventHandler(this.tsBack_Click);
-			// 
-			// tsOpenCard
-			// 
-			this.tsOpenCard.Name = "tsOpenCard";
-			this.tsOpenCard.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
-			this.tsOpenCard.Size = new System.Drawing.Size(243, 22);
-			this.tsOpenCard.Text = "Открыть карточку";
-			this.tsOpenCard.Click += new System.EventHandler(this.tsOpenCard_Click);
-			// 
-			// tsCreateOrgUnit
-			// 
-			this.tsCreateOrgUnit.Name = "tsCreateOrgUnit";
-			this.tsCreateOrgUnit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D4)));
-			this.tsCreateOrgUnit.Size = new System.Drawing.Size(243, 22);
-			this.tsCreateOrgUnit.Text = "Создать подразделение";
-			this.tsCreateOrgUnit.Click += new System.EventHandler(this.tsCreateOrgUnit_Click);
-			// 
-			// tsCreatePerson
-			// 
-			this.tsCreatePerson.Name = "tsCreatePerson";
-			this.tsCreatePerson.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D5)));
-			this.tsCreatePerson.Size = new System.Drawing.Size(243, 22);
-			this.tsCreatePerson.Text = "Создать сотрудника";
-			this.tsCreatePerson.Click += new System.EventHandler(this.tsCreatePerson_Click);
-			// 
-			// tsDelete
-			// 
-			this.tsDelete.Name = "tsDelete";
-			this.tsDelete.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D6)));
-			this.tsDelete.Size = new System.Drawing.Size(243, 22);
-			this.tsDelete.Text = "Удалить";
-			this.tsDelete.Click += new System.EventHandler(this.tsDelete_Click);
-			// 
-			// tlEventsPopup
-			// 
-			this.tlEventsPopup.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tlEditPopup.Name = "tlEditPopup";
+            this.tlEditPopup.Size = new System.Drawing.Size(108, 20);
+            this.tlEditPopup.Text = "Редактирование";
+            // 
+            // tsRefreshList
+            // 
+            this.tsRefreshList.Name = "tsRefreshList";
+            this.tsRefreshList.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F5)));
+            this.tsRefreshList.Size = new System.Drawing.Size(243, 22);
+            this.tsRefreshList.Text = "Обновить список";
+            this.tsRefreshList.Click += new System.EventHandler(this.tsRefreshList_Click);
+            // 
+            // tsEnter
+            // 
+            this.tsEnter.Name = "tsEnter";
+            this.tsEnter.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
+            this.tsEnter.Size = new System.Drawing.Size(243, 22);
+            this.tsEnter.Text = "Открыть";
+            this.tsEnter.Click += new System.EventHandler(this.tsEnter_Click);
+            // 
+            // tsBack
+            // 
+            this.tsBack.Name = "tsBack";
+            this.tsBack.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
+            this.tsBack.Size = new System.Drawing.Size(243, 22);
+            this.tsBack.Text = "Назад";
+            this.tsBack.Click += new System.EventHandler(this.tsBack_Click);
+            // 
+            // tsOpenCard
+            // 
+            this.tsOpenCard.Name = "tsOpenCard";
+            this.tsOpenCard.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
+            this.tsOpenCard.Size = new System.Drawing.Size(243, 22);
+            this.tsOpenCard.Text = "Открыть карточку";
+            this.tsOpenCard.Click += new System.EventHandler(this.tsOpenCard_Click);
+            // 
+            // tsCreateOrgUnit
+            // 
+            this.tsCreateOrgUnit.Name = "tsCreateOrgUnit";
+            this.tsCreateOrgUnit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D4)));
+            this.tsCreateOrgUnit.Size = new System.Drawing.Size(243, 22);
+            this.tsCreateOrgUnit.Text = "Создать подразделение";
+            this.tsCreateOrgUnit.Click += new System.EventHandler(this.tsCreateOrgUnit_Click);
+            // 
+            // tsCreatePerson
+            // 
+            this.tsCreatePerson.Name = "tsCreatePerson";
+            this.tsCreatePerson.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D5)));
+            this.tsCreatePerson.Size = new System.Drawing.Size(243, 22);
+            this.tsCreatePerson.Text = "Создать сотрудника";
+            this.tsCreatePerson.Click += new System.EventHandler(this.tsCreatePerson_Click);
+            // 
+            // tsDelete
+            // 
+            this.tsDelete.Name = "tsDelete";
+            this.tsDelete.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D6)));
+            this.tsDelete.Size = new System.Drawing.Size(243, 22);
+            this.tsDelete.Text = "Удалить";
+            this.tsDelete.Click += new System.EventHandler(this.tsDelete_Click);
+            // 
+            // tlEventsPopup
+            // 
+            this.tlEventsPopup.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsEvents});
-			this.tlEventsPopup.Name = "tlEventsPopup";
-			this.tlEventsPopup.Size = new System.Drawing.Size(68, 20);
-			this.tlEventsPopup.Text = "События";
-			// 
-			// tsEvents
-			// 
-			this.tsEvents.Name = "tsEvents";
-			this.tsEvents.Size = new System.Drawing.Size(124, 22);
-			this.tsEvents.Text = "Показать";
-			this.tsEvents.Click += new System.EventHandler(this.tsEvents_Click);
-			// 
-			// toolStripMenuItem1
-			// 
-			this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tlEventsPopup.Name = "tlEventsPopup";
+            this.tlEventsPopup.Size = new System.Drawing.Size(68, 20);
+            this.tlEventsPopup.Text = "События";
+            // 
+            // tsEvents
+            // 
+            this.tsEvents.Name = "tsEvents";
+            this.tsEvents.Size = new System.Drawing.Size(124, 22);
+            this.tsEvents.Text = "Показать";
+            this.tsEvents.Click += new System.EventHandler(this.tsEvents_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.получитьСостояниеToolStripMenuItem});
-			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-			this.toolStripMenuItem1.Size = new System.Drawing.Size(100, 20);
-			this.toolStripMenuItem1.Text = "Оборудование";
-			// 
-			// получитьСостояниеToolStripMenuItem
-			// 
-			this.получитьСостояниеToolStripMenuItem.Name = "получитьСостояниеToolStripMenuItem";
-			this.получитьСостояниеToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-			this.получитьСостояниеToolStripMenuItem.Text = "Команды\\Состояние";
-			this.получитьСостояниеToolStripMenuItem.Click += new System.EventHandler(this.получитьСостояниеToolStripMenuItem_Click);
-			// 
-			// stStatus
-			// 
-			this.stStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(100, 20);
+            this.toolStripMenuItem1.Text = "Оборудование";
+            // 
+            // получитьСостояниеToolStripMenuItem
+            // 
+            this.получитьСостояниеToolStripMenuItem.Name = "получитьСостояниеToolStripMenuItem";
+            this.получитьСостояниеToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.получитьСостояниеToolStripMenuItem.Text = "Команды\\Состояние";
+            this.получитьСостояниеToolStripMenuItem.Click += new System.EventHandler(this.получитьСостояниеToolStripMenuItem_Click);
+            // 
+            // stStatus
+            // 
+            this.stStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsUserStatus,
             this.tsStatusString});
-			this.stStatus.Location = new System.Drawing.Point(0, 452);
-			this.stStatus.Name = "stStatus";
-			this.stStatus.Size = new System.Drawing.Size(659, 22);
-			this.stStatus.TabIndex = 1;
-			this.stStatus.Text = "statusStrip1";
-			// 
-			// tsUserStatus
-			// 
-			this.tsUserStatus.Name = "tsUserStatus";
-			this.tsUserStatus.Size = new System.Drawing.Size(0, 17);
-			// 
-			// tsStatusString
-			// 
-			this.tsStatusString.Name = "tsStatusString";
-			this.tsStatusString.Size = new System.Drawing.Size(0, 17);
-			// 
-			// lvPersons
-			// 
-			this.lvPersons.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.stStatus.Location = new System.Drawing.Point(0, 452);
+            this.stStatus.Name = "stStatus";
+            this.stStatus.Size = new System.Drawing.Size(659, 22);
+            this.stStatus.TabIndex = 1;
+            this.stStatus.Text = "statusStrip1";
+            // 
+            // tsUserStatus
+            // 
+            this.tsUserStatus.Name = "tsUserStatus";
+            this.tsUserStatus.Size = new System.Drawing.Size(0, 17);
+            // 
+            // tsStatusString
+            // 
+            this.tsStatusString.Name = "tsStatusString";
+            this.tsStatusString.Size = new System.Drawing.Size(0, 17);
+            // 
+            // lvPersons
+            // 
+            this.lvPersons.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colLastName,
             this.colFirstName,
             this.colMiddleName,
             this.colTabNum});
-			this.lvPersons.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.lvPersons.FullRowSelect = true;
-			this.lvPersons.GridLines = true;
-			this.lvPersons.HideSelection = false;
-			this.lvPersons.LargeImageList = this.ilLargeIcons;
-			this.lvPersons.Location = new System.Drawing.Point(0, 24);
-			this.lvPersons.MultiSelect = false;
-			this.lvPersons.Name = "lvPersons";
-			this.lvPersons.Size = new System.Drawing.Size(659, 428);
-			this.lvPersons.SmallImageList = this.ilSmallIcons;
-			this.lvPersons.TabIndex = 2;
-			this.lvPersons.UseCompatibleStateImageBehavior = false;
-			this.lvPersons.View = System.Windows.Forms.View.Details;
-			this.lvPersons.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lvPersons_KeyUp);
-			this.lvPersons.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvPersons_MouseDoubleClick);
-			// 
-			// colLastName
-			// 
-			this.colLastName.Text = "Фамилия";
-			// 
-			// colFirstName
-			// 
-			this.colFirstName.Text = "Имя";
-			// 
-			// colMiddleName
-			// 
-			this.colMiddleName.Text = "Отчество";
-			// 
-			// colTabNum
-			// 
-			this.colTabNum.Text = "Табельный номер";
-			// 
-			// ilLargeIcons
-			// 
-			this.ilLargeIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilLargeIcons.ImageStream")));
-			this.ilLargeIcons.TransparentColor = System.Drawing.Color.Transparent;
-			this.ilLargeIcons.Images.SetKeyName(0, "folder.png");
-			this.ilLargeIcons.Images.SetKeyName(1, "user.png");
-			// 
-			// ilSmallIcons
-			// 
-			this.ilSmallIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilSmallIcons.ImageStream")));
-			this.ilSmallIcons.TransparentColor = System.Drawing.Color.Transparent;
-			this.ilSmallIcons.Images.SetKeyName(0, "folder.png");
-			this.ilSmallIcons.Images.SetKeyName(1, "user.png");
-			// 
-			// MainForm
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(659, 474);
-			this.Controls.Add(this.lvPersons);
-			this.Controls.Add(this.stStatus);
-			this.Controls.Add(this.menuStrip1);
-			this.MainMenuStrip = this.menuStrip1;
-			this.Name = "MainForm";
-			this.ShowIcon = false;
-			this.Text = "Клиент интеграции ParsecNET3";
-			this.menuStrip1.ResumeLayout(false);
-			this.menuStrip1.PerformLayout();
-			this.stStatus.ResumeLayout(false);
-			this.stStatus.PerformLayout();
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.lvPersons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvPersons.FullRowSelect = true;
+            this.lvPersons.GridLines = true;
+            this.lvPersons.HideSelection = false;
+            this.lvPersons.LargeImageList = this.ilLargeIcons;
+            this.lvPersons.Location = new System.Drawing.Point(0, 24);
+            this.lvPersons.MultiSelect = false;
+            this.lvPersons.Name = "lvPersons";
+            this.lvPersons.Size = new System.Drawing.Size(659, 428);
+            this.lvPersons.SmallImageList = this.ilSmallIcons;
+            this.lvPersons.TabIndex = 2;
+            this.lvPersons.UseCompatibleStateImageBehavior = false;
+            this.lvPersons.View = System.Windows.Forms.View.Details;
+            this.lvPersons.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lvPersons_KeyUp);
+            this.lvPersons.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvPersons_MouseDoubleClick);
+            // 
+            // colLastName
+            // 
+            this.colLastName.Text = "Фамилия";
+            // 
+            // colFirstName
+            // 
+            this.colFirstName.Text = "Имя";
+            // 
+            // colMiddleName
+            // 
+            this.colMiddleName.Text = "Отчество";
+            // 
+            // colTabNum
+            // 
+            this.colTabNum.Text = "Табельный номер";
+            // 
+            // ilLargeIcons
+            // 
+            this.ilLargeIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilLargeIcons.ImageStream")));
+            this.ilLargeIcons.TransparentColor = System.Drawing.Color.Transparent;
+            this.ilLargeIcons.Images.SetKeyName(0, "folder.png");
+            this.ilLargeIcons.Images.SetKeyName(1, "user.png");
+            // 
+            // ilSmallIcons
+            // 
+            this.ilSmallIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilSmallIcons.ImageStream")));
+            this.ilSmallIcons.TransparentColor = System.Drawing.Color.Transparent;
+            this.ilSmallIcons.Images.SetKeyName(0, "folder.png");
+            this.ilSmallIcons.Images.SetKeyName(1, "user.png");
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(659, 474);
+            this.Controls.Add(this.lvPersons);
+            this.Controls.Add(this.stStatus);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "MainForm";
+            this.ShowIcon = false;
+            this.Text = "Клиент интеграции ParsecNET3";
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.stStatus.ResumeLayout(false);
+            this.stStatus.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -750,5 +751,10 @@ namespace ParsecIntegrationClient
 			gResult = iService.OpenPersonEditingSession( ClientState.SessionID, person.ID );
 			iService.BlockPerson( gResult.Value, 1 );
 		}
-	}
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
