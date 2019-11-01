@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StructFromXML", "StructFrom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrgUnitParsec", "OrgUnitParsec\OrgUnitParsec.csproj", "{E05B9967-C341-4CEA-B92F-4972B86816BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsersParser", "UsersParser\UsersParser.csproj", "{97E06B30-CB93-4BBB-A00E-894A75798F72}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{E05B9967-C341-4CEA-B92F-4972B86816BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E05B9967-C341-4CEA-B92F-4972B86816BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E05B9967-C341-4CEA-B92F-4972B86816BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97E06B30-CB93-4BBB-A00E-894A75798F72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97E06B30-CB93-4BBB-A00E-894A75798F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97E06B30-CB93-4BBB-A00E-894A75798F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97E06B30-CB93-4BBB-A00E-894A75798F72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

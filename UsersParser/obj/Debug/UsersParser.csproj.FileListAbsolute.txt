@@ -1,0 +1,7 @@
+D:\GIT\SDK_PN4.git\UsersParser\bin\Debug\persons.xml
+D:\GIT\SDK_PN4.git\UsersParser\bin\Debug\UsersParser.exe.config
+D:\GIT\SDK_PN4.git\UsersParser\bin\Debug\UsersParser.exe
+D:\GIT\SDK_PN4.git\UsersParser\bin\Debug\UsersParser.pdb
+D:\GIT\SDK_PN4.git\UsersParser\obj\Debug\UsersParser.csprojAssemblyReference.cache
+D:\GIT\SDK_PN4.git\UsersParser\obj\Debug\UsersParser.exe
+D:\GIT\SDK_PN4.git\UsersParser\obj\Debug\UsersParser.pdb

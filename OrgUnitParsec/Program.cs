@@ -47,6 +47,44 @@ namespace OrgUnitParsec
             oulevel = oulevel01;
         }
 
+        //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        [Serializable]
+        [XmlRoot("persons")]
+        public class persons
+        {
+            [XmlArray("personsList"), XmlArrayItem(typeof(Person), ElementName = "Person")]
+            public List<Person> personsList { get; set; }
+        }
+
+        [Serializable]
+        public class Person
+        {
+            [XmlAttribute]
+            public string lastname { get; set; }
+            [XmlAttribute]
+            public string firstname { get; set; }
+            [XmlAttribute]
+            public string middlename { get; set; }
+            [XmlAttribute]
+            public string id { get; set; }
+            [XmlAttribute]
+            public string birthday { get; set; }
+            [XmlAttribute]
+            public Guid personguid { get; set; }
+
+            public Person() { }
+            public Person(string lastname01, string firstname01, string middlename01, string id01, string birthday01, Guid personguid01)
+            {
+                lastname = lastname01;
+                firstname = firstname01;
+                middlename = middlename01;
+                id = id01;
+                birthday = birthday01;
+                personguid = personguid01;
+            }
+
+        }
+
     }
     class Program
 
@@ -134,7 +172,7 @@ namespace OrgUnitParsec
                                 Console.WriteLine($"1-й уровень {newOU.ID} {newOU.NAME} {newOU.PARENT_ID}");
 
                                 GuidResult ou1_result = integrService.CreateOrgUnit(sessionGUID, newOU);
-                                Console.WriteLine(ou1_result.Value);
+                               // Console.WriteLine(ou1_result.Value);
 
                                 PGuid1.Push(ou1_result.Value); //Формируем список Guid 1 уровня
                             }
@@ -264,7 +302,7 @@ namespace OrgUnitParsec
                     var result = integrService.GetOrgUnitsHierarhy(sessionGUID);
                     foreach (OrgUnit j in result)
                     {
-                        Console.WriteLine($"{j.ID} -> {j.NAME} -> {j.PARENT_ID}");
+                        Console.WriteLine($"ParsecId: {j.ID} AB_GUID {j.DESC} Name: {j.NAME} -> Parsec_Parent_ID{j.PARENT_ID}");
                     }
                     Console.WriteLine($"It works TOO: {parsecHierarhy[i].ID}");
                 }
