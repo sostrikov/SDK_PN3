@@ -95,12 +95,12 @@ namespace OrgUnitParsec
         static void Main(string[] args)
         {
 
+            //Подключаемся к серверу Parsec
             IntegrationService integrService = new IntegrationService();
             string domain = "SYSTEM";
             string userName = "Ostrikov";
             string password = "QAZwsx111";
-
-            //Подключаемся к серверу Parsec
+                        
             SessionResult res = integrService.OpenSession(domain, userName, password);
             Guid sessionGUID = res.Value.SessionID;
             string mySessionID = res.Value.SessionID.ToString();
@@ -156,7 +156,8 @@ namespace OrgUnitParsec
 
                             // получаем атрибут Guid
                             XmlNode attr4 = xnode.Attributes.GetNamedItem("guid");
-                           
+                            Guid guidTrue;
+                            bool resultG = Guid.TryParse(attr4.Value, out guidTrue);
                             //Console.WriteLine($"1L >{PGuid1.Peek()}");
 
                             //Заносим результат в  Parsec OrgUnit
@@ -164,15 +165,15 @@ namespace OrgUnitParsec
                             {
                                 OrgUnit newOU = new OrgUnit
                                 {
-                                    ID = new Guid(attr4.Value),
+                                    ID = guidTrue,
                                     NAME = attr1.Value,
                                     DESC = attr4.Value, //Запишем GUID из кадровой системы в поле описание
                                     PARENT_ID = bmstuRoot
                                 };
-                                Console.WriteLine($"1-й уровень {newOU.ID} {newOU.NAME} {newOU.PARENT_ID}");
+                               // Console.WriteLine($"1-й уровень {newOU.ID} {newOU.NAME} {newOU.PARENT_ID}");
 
                                 GuidResult ou1_result = integrService.CreateOrgUnit(sessionGUID, newOU);
-                               // Console.WriteLine(ou1_result.Value);
+                                Console.WriteLine($"1 - {newOU.ID} =>> {ou1_result.Value}");
 
                                 PGuid1.Push(ou1_result.Value); //Формируем список Guid 1 уровня
                             }
@@ -196,14 +197,17 @@ namespace OrgUnitParsec
 
                                                             // получаем атрибут Guid
                                                             XmlNode attr4 = xnode2.Attributes.GetNamedItem("guid");
-                                                            PGuid2.Push(new Guid(attr4.Value));
+                                                            Guid guidTrue;
+                                                            bool resultG = Guid.TryParse(attr4.Value, out guidTrue);
+                                                            
+                                                            PGuid2.Push(guidTrue);
                                                             //Console.WriteLine($"2L >{PGuid2.Peek()}");
                                                             //Заносим результат в  Parsec OrgUnit
-                                                            if (attr1 != null && attr2 != null && attr3 != null && attr4 != null)
+                                                            if (attr1 != null && attr2 != null && attr3 != null && resultG == true)
                                                             {
                                                                 OrgUnit newOU = new OrgUnit
                                                                 {
-                                                                    ID = new Guid(attr4.Value),
+                                                                    ID = Guid.Parse(attr4.Value),
                                                                     NAME = attr1.Value,
                                                                     DESC = attr4.Value, //Запишем GUID из кадровой системы в поле описание
                                                                     PARENT_ID = PGuid1.Peek()//Последний элемент в списке ГУИДов 1 уровня
@@ -211,6 +215,7 @@ namespace OrgUnitParsec
                                                                 Console.WriteLine($"2ой уровень {newOU.ID} {newOU.NAME} {newOU.PARENT_ID}");
 
                                                                 GuidResult ou2_result = integrService.CreateOrgUnit(sessionGUID, newOU);
+                                                                Console.WriteLine($"2 - {newOU.ID} =>> {ou2_result.Value}");
                                                                 PGuid2.Push(ou2_result.Value); //Формируем стек Guid 2 уровня
                                                             }
                                                            // else Console.WriteLine("OU1 Empty");
@@ -234,14 +239,17 @@ namespace OrgUnitParsec
 
                                                                 // получаем атрибут Guid
                                                                 XmlNode attr4 = xnode3.Attributes.GetNamedItem("guid");
-                                                                PGuid3.Push(new Guid(attr4.Value));
+                                                                Guid guidTrue;
+                                                                bool resultG = Guid.TryParse(attr4.Value, out guidTrue);
+                                    
+                                                                 PGuid3.Push(guidTrue);
                                                                // Console.WriteLine($"3L >{PGuid2.Peek()}");
                                                                 //Заносим результат в  Parsec OrgUnit
-                                                                if (attr1 != null && attr2 != null && attr3 != null && attr4 != null)
+                                                                if (attr1 != null && attr2 != null && attr3 != null && resultG == true)
                                                                 {
                                                                     OrgUnit newOU = new OrgUnit
                                                                     {
-                                                                        ID = new Guid(attr4.Value),
+                                                                        ID = guidTrue,
                                                                         NAME = attr1.Value,
                                                                         DESC = attr4.Value, //Запишем GUID из кадровой системы в поле описание
                                                                         PARENT_ID = PGuid2.Peek()//Последний элемент в списке ГУИДов 2 уровня
@@ -270,14 +278,15 @@ namespace OrgUnitParsec
 
                                                                     // получаем атрибут Guid
                                                                     XmlNode attr4 = xnode4.Attributes.GetNamedItem("guid");
-
+                                                                    Guid guidTrue;
+                                                                    bool resultG = Guid.TryParse(attr4.Value, out guidTrue);
 
                                                                     //Заносим результат в  Parsec OrgUnit
-                                                                    if (attr1 != null && attr2 != null && attr3 != null && attr4 != null)
+                                                                    if (attr1 != null && attr2 != null && attr3 != null && resultG == true)
                                                                     {
                                                                         OrgUnit newOU = new OrgUnit
                                                                         {
-                                                                            ID = new Guid(attr4.Value),
+                                                                            ID = guidTrue,
                                                                             NAME = attr1.Value,
                                                                             DESC = attr4.Value, //Запишем GUID из кадровой системы в поле описание
                                                                             PARENT_ID = PGuid3.Peek()//Последний элемент в списке ГУИДов 3 уровня
@@ -297,14 +306,14 @@ namespace OrgUnitParsec
 
                     }
 
-                    //Создаем OU в Parsec
-                    // GuidResult ouresult = integrService.CreateOrgUnit(sessionGUID, newOU);
+                    //Достаем иерархию OU из Parsec
+                   
                     var result = integrService.GetOrgUnitsHierarhy(sessionGUID);
                     foreach (OrgUnit j in result)
                     {
                         Console.WriteLine($"ParsecId: {j.ID} AB_GUID {j.DESC} Name: {j.NAME} -> Parsec_Parent_ID{j.PARENT_ID}");
                     }
-                    Console.WriteLine($"It works TOO: {parsecHierarhy[i].ID}");
+                    Console.WriteLine($"Finish: {parsecHierarhy[i].ID}");
                 }
             }
             

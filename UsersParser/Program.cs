@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 using System.IO;
+using ParsecIntegrationClient.IntegrationWebService;
 
 namespace UsersParser
 {
@@ -33,6 +34,7 @@ namespace UsersParser
         public string birthday { get; set; }
         [XmlAttribute]
         public Guid personguid { get; set; }
+        public List<Department> DepList { get; set; }
 
         public Person() { }
         public Person(string lastname01, string firstname01, string middlename01, string id01, string birthday01, Guid personguid01)
@@ -47,10 +49,77 @@ namespace UsersParser
 
     }
 
+    public class Department
+    {
+        [XmlAttribute]
+        public string prof { get; set; }
+
+        [XmlAttribute]
+        public Guid profguid { get; set; }
+
+        [XmlAttribute]
+        public string marks { get; set; }
+
+        [XmlAttribute]
+        public Guid struct_guid { get; set; }
+
+        [XmlAttribute]
+        public Guid vak_guid { get; set; }
+
+        [XmlAttribute]
+        public string tabel { get; set; }
+
+        [XmlAttribute]
+        public string nomerprikaza { get; set; }
+
+        [XmlAttribute]
+        public string dataprikaza { get; set; }
+
+        public Department
+            (
+            string prof1,
+            Guid profguid1,
+            string marks1,
+            Guid struct_guid1,
+            Guid vak_guid1,
+            string tabel1,
+            string nomerprikaza1,
+            string dataprikaza1
+            )
+        {
+            prof = prof1;
+            profguid = profguid1;
+            marks = marks1;
+            struct_guid = struct_guid1;
+            vak_guid = vak_guid1;
+            tabel = tabel1;
+            nomerprikaza = nomerprikaza1;
+            dataprikaza = dataprikaza1;
+
+        }
+        
+
+        
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
+
+            // ===============PARSEC + ==========================================================
+            IntegrationService integrService = new IntegrationService();
+            string domain = "SYSTEM";
+            string userName = "Ostrikov";
+            string password = "QAZwsx111";
+
+            //Подключаемся к серверу Parsec
+            SessionResult res = integrService.OpenSession(domain, userName, password);
+            Guid sessionGUID = res.Value.SessionID;
+            string mySessionID = res.Value.SessionID.ToString();
+            Console.WriteLine($"SessionId: {mySessionID}");
+            // ===============PARSEC - ==========================================================
+
             //Создаем объект для загрузки сотрудников
             persons f2 = new persons();
             f2.personsList = new List<Person>();
@@ -104,24 +173,51 @@ namespace UsersParser
                         if (xnode2.Attributes.Count > 0)
                         {
                             XmlNode attr21 = xnode2.Attributes.GetNamedItem("prof");//профессия
-                            Console.Write($"{attr21.Value}\t");
+                                                                                    // Console.Write($"{attr21.Value}\t");
 
-                            XmlNode attr22 = xnode2.Attributes.GetNamedItem("profguid");//GUID профессии
-                            Console.Write($"{attr22.Value}\t");
+                            XmlNode attr22 = xnode2.Attributes.GetNamedItem("profguid");//GUID профессии  совпадает с OU   professionUID
+                            // Console.Write($"{attr22.Value}\t");
 
                             XmlNode attr23 = xnode2.Attributes.GetNamedItem("marks");//Категория договора
-                            Console.Write($"{attr23.Value}\t");
+                                                                                     // Console.Write($"{attr23.Value}\t");
 
-                            XmlNode attr24 = xnode2.Attributes.GetNamedItem("struct_guid");//GUID структуры
-                            Console.Write($"{attr24.Value}\t");
+                            XmlNode attr24 = xnode2.Attributes.GetNamedItem("struct_guid");//GUID структуры совпадает с OU guid
+                                                                                           // Console.Write($"{attr24.Value}\t");
 
                             XmlNode attr25 = xnode2.Attributes.GetNamedItem("vak_guid");//GUID вакансии
-                            Console.Write($"{attr25.Value}\t");
+                                                                                        // Console.Write($"{attr25.Value}\t");
 
-                            XmlNode attr26 = xnode2.Attributes.GetNamedItem("guid");//GUID ???
-                            Console.Write($"{attr26.Value}\t");
+                            XmlNode attr26 = xnode2.Attributes.GetNamedItem("guid");//GUID - department
+                                                                                    //Console.Write($"{attr26.Value}\t");
 
-                            // tabel = "143565" nomerprikaza = "02.13-03/1088" dataprikaza = "2018-02-07"
+                            XmlNode attr27 = xnode2.Attributes.GetNamedItem("tabel");//
+                            //Console.Write($"{attr27.Value}\t");
+
+                            XmlNode attr28 = xnode2.Attributes.GetNamedItem("nomerprikaza");//
+                            //Console.Write($"{attr28.Value}\t");
+
+                            XmlNode attr29 = xnode2.Attributes.GetNamedItem("dataprikaza");//
+                            //Console.Write($"{attr28.Value}\t");
+
+
+                            Console.WriteLine($"prof- {attr21.Value} profguid- {attr22.Value} marks- {attr23.Value} struct_guid- {attr24.Value} vak_guid- {attr25.Value} guid- {attr26.Value}");
+
+                            if (attr23.Value == "") //По основной должности или внешний совместитель  ||attr23.Value=="B"
+                            {
+                                ParsecIntegrationClient.IntegrationWebService.Person newperson = new ParsecIntegrationClient.IntegrationWebService.Person
+                                {
+
+                                    ID = new Guid(f2.personsList.Last().id),
+                                    LAST_NAME = f2.personsList.Last().lastname,
+                                    FIRST_NAME = f2.personsList.Last().firstname,
+                                    MIDDLE_NAME = f2.personsList.Last().middlename,
+                                    TAB_NUM = string.Concat(attr21.Value, " ", attr27.Value),
+                                    ORG_ID = new Guid(attr24.Value)
+                                };
+
+                                GuidResult res2 = integrService.CreatePerson(sessionGUID, newperson);
+
+                            }
 
 
 
