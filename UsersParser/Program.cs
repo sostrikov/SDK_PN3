@@ -213,15 +213,32 @@ namespace UsersParser
                             if (attr23.Value == "") //По основной должности или внешний совместитель  ||attr23.Value=="B"
                             {
                                 
-                                using (TextWriter tw = new StreamWriter("SavedParsecPersons.txt"))
+                                using (TextWriter tw = new StreamWriter("SavedParsecPersons.txt", true))
                                 {
                                     pers = integrService.FindPeople(sessionGUID, attr1.Value, attr2.Value, attr3.Value);
                                     try
                                     {
+                                        //Открываем сессию редактирования найденного сотрудника
+                                        GuidResult editSessionGuid = integrService.OpenPersonEditingSession(sessionGUID, pers.Last().ID);
+                                        OrgUnit[] parsecHierarhy = integrService.GetOrgUnitsHierarhy(sessionGUID);
+                                        Stack<Guid> StaffOU = new Stack<Guid>();
+                                        foreach (OrgUnit i in parsecHierarhy)
+                                        {
+                                            // Console.WriteLine($"ID: {i.ID} Name: {i.NAME} Parent: {i.PARENT_ID}");
+                                            if (i.NAME == "Сотрудники") StaffOU.Push(i.ID); //Console.WriteLine($"It works: {i.ID}");
+                                        }
+                                        
+                                        //Привязываем сотрудника к требуемому OU
+                                        integrService.SetPersonOrgUnit(editSessionGuid.Value, StaffOU.Peek());
+
+                                        //Закрываем сессию редактирования найденного сотрудника
+                                        integrService.ClosePersonEditingSession(editSessionGuid.Value);
+
                                         Console.ForegroundColor = ConsoleColor.Green;
                                         Console.WriteLine($" Нашел: {pers.Last().LAST_NAME} {pers.Last().ID}");
-                                        tw.WriteLine($"{pers.Last().LAST_NAME} {pers.Last().ID}");
-                                        tw.Close();
+                                        tw.WriteLine($"{pers.Last().LAST_NAME}; {pers.Last().FIRST_NAME}; {pers.Last().MIDDLE_NAME}; {pers.Last().ID}; {attr24.Value}");
+                                        // await tw.WriteAsync($"{pers.Last().LAST_NAME} {pers.Last().ID}");
+                                        // tw.Close();
                                         Console.ResetColor();
                                     }
                                     catch
@@ -231,8 +248,6 @@ namespace UsersParser
                                         Console.ResetColor();
                                     }
 
-                                    //Очищаем массив
-                                   // Array.Clear(pers, 0, pers.Length - 1);
                                 }
                                 /*
                                  ParsecIntegrationClient.IntegrationWebService.Person newperson = new ParsecIntegrationClient.IntegrationWebService.Person
@@ -249,7 +264,7 @@ namespace UsersParser
 
                                  GuidResult res2 = integrService.CreatePerson(sessionGUID, newperson);
                                  */
-                                Console.WriteLine("Main!!!");
+                                //Console.WriteLine("Main!!!");
                             }
 
 
