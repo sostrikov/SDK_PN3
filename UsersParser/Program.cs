@@ -170,16 +170,7 @@ namespace UsersParser
                    
                     //Ищем сотрудника в базе Parsec Если находим пишем в файл =======================================================================================
 
-                        using (TextWriter tw = new StreamWriter("SavedParsecPersons.txt"))
-                        {
-                            pers = integrService.FindPeople(sessionGUID, attr1.Value, attr2.Value, attr3.Value);
-
-                          
-                            Console.WriteLine($" Нашел: {pers.Last().LAST_NAME} {pers.Last().ID}");
-                            tw.WriteLine($"{pers.Last().LAST_NAME} {pers.Last().ID}");
-                            //Очищаем массив
-                            Array.Clear(pers,0,pers.Length-1);
-                        }
+                      
                   
 
 
@@ -221,6 +212,28 @@ namespace UsersParser
 
                             if (attr23.Value == "") //По основной должности или внешний совместитель  ||attr23.Value=="B"
                             {
+                                
+                                using (TextWriter tw = new StreamWriter("SavedParsecPersons.txt"))
+                                {
+                                    pers = integrService.FindPeople(sessionGUID, attr1.Value, attr2.Value, attr3.Value);
+                                    try
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine($" Нашел: {pers.Last().LAST_NAME} {pers.Last().ID}");
+                                        tw.WriteLine($"{pers.Last().LAST_NAME} {pers.Last().ID}");
+                                        tw.Close();
+                                        Console.ResetColor();
+                                    }
+                                    catch
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.WriteLine($" Не нашел: {attr1.Value} {attr2.Value} {attr3.Value}");
+                                        Console.ResetColor();
+                                    }
+
+                                    //Очищаем массив
+                                   // Array.Clear(pers, 0, pers.Length - 1);
+                                }
                                 /*
                                  ParsecIntegrationClient.IntegrationWebService.Person newperson = new ParsecIntegrationClient.IntegrationWebService.Person
                                  {
@@ -236,15 +249,15 @@ namespace UsersParser
 
                                  GuidResult res2 = integrService.CreatePerson(sessionGUID, newperson);
                                  */
-                               
+                                Console.WriteLine("Main!!!");
                             }
 
 
-                           
+
                         }
                     }
 
-                    Console.ReadKey();
+                    /*
 
                     //Сериализация в XML
                     // передаем в конструктор тип класса
@@ -258,9 +271,11 @@ namespace UsersParser
                     {
                         s2.Serialize(fs2, f2);
                     }
+                    */
 
                 }
             }
+            Console.ReadKey();
         }
     }
 }
