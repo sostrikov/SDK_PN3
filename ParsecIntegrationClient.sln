@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrgUnitParsec", "OrgUnitPar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsersParser", "UsersParser\UsersParser.csproj", "{97E06B30-CB93-4BBB-A00E-894A75798F72}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtraFieldTemplates", "ExtraFieldTemplates\ExtraFieldTemplates.csproj", "{290063CF-B045-44ED-AB3C-66DB9BCCA9FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{97E06B30-CB93-4BBB-A00E-894A75798F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97E06B30-CB93-4BBB-A00E-894A75798F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97E06B30-CB93-4BBB-A00E-894A75798F72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{290063CF-B045-44ED-AB3C-66DB9BCCA9FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{290063CF-B045-44ED-AB3C-66DB9BCCA9FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{290063CF-B045-44ED-AB3C-66DB9BCCA9FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{290063CF-B045-44ED-AB3C-66DB9BCCA9FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -16,3 +16,7 @@ D:\git\SDK_PN3\UsersParser\bin\Debug\ParsecIntegrationClient.exe
 D:\git\SDK_PN3\UsersParser\bin\Debug\ParsecIntegrationClient.pdb
 D:\git\SDK_PN3\UsersParser\bin\Debug\ParsecIntegrationClient.exe.config
 D:\git\SDK_PN3\UsersParser\obj\Debug\UsersParser.csproj.CopyComplete
+D:\GIT\SDK_PN4.git\UsersParser\bin\Debug\ParsecIntegrationClient.exe
+D:\GIT\SDK_PN4.git\UsersParser\bin\Debug\ParsecIntegrationClient.pdb
+D:\GIT\SDK_PN4.git\UsersParser\bin\Debug\ParsecIntegrationClient.exe.config
+D:\GIT\SDK_PN4.git\UsersParser\obj\Debug\UsersParser.csproj.CopyComplete

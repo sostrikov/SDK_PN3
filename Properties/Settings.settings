@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ParsecIntegrationClient_IntegrationWebService_IntegrationService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://127.0.0.1:10101/IntegrationService/IntegrationService.asmx</Value>
+      <Value Profile="(Default)">http://195.19.32.187:60501/IntegrationService/IntegrationService.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

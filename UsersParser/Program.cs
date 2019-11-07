@@ -132,6 +132,7 @@ namespace UsersParser
             // получим корневой элемент
             XmlElement xRootPerson = xDoc4.DocumentElement;
             XmlNodeList personsnodes = xRootPerson.SelectNodes("person");
+            ParsecIntegrationClient.IntegrationWebService.Person[] pers;
             foreach (XmlNode xnode in personsnodes)
             {
 
@@ -166,6 +167,22 @@ namespace UsersParser
                     if (attr1 != null && attr2 != null && attr3 != null && attr4 != null && attr5 != null && attr6 != null)
                         f2.personsList.Add(new Person() { lastname = attr1.Value, firstname = attr2.Value, middlename = attr3.Value, id = attr4.Value, birthday = attr5.Value, personguid = new Guid(attr6.Value) });
                     //personList.Add(new Person(attr1.Value, attr2.Value, attr3.Value, attr4.Value, attr5.Value, new Guid(attr6.Value)));
+                   
+                    //Ищем сотрудника в базе Parsec Если находим пишем в файл =======================================================================================
+
+                        using (TextWriter tw = new StreamWriter("SavedParsecPersons.txt"))
+                        {
+                            pers = integrService.FindPeople(sessionGUID, attr1.Value, attr2.Value, attr3.Value);
+
+                          
+                            Console.WriteLine($" Нашел: {pers.Last().LAST_NAME} {pers.Last().ID}");
+                            tw.WriteLine($"{pers.Last().LAST_NAME} {pers.Last().ID}");
+                            //Очищаем массив
+                            Array.Clear(pers,0,pers.Length-1);
+                        }
+                  
+
+
 
                     //department
                     foreach (XmlNode xnode2 in xnode.ChildNodes)
@@ -204,23 +221,26 @@ namespace UsersParser
 
                             if (attr23.Value == "") //По основной должности или внешний совместитель  ||attr23.Value=="B"
                             {
-                                ParsecIntegrationClient.IntegrationWebService.Person newperson = new ParsecIntegrationClient.IntegrationWebService.Person
-                                {
+                                /*
+                                 ParsecIntegrationClient.IntegrationWebService.Person newperson = new ParsecIntegrationClient.IntegrationWebService.Person
+                                 {
 
-                                    ID = new Guid(f2.personsList.Last().id),
-                                    LAST_NAME = f2.personsList.Last().lastname,
-                                    FIRST_NAME = f2.personsList.Last().firstname,
-                                    MIDDLE_NAME = f2.personsList.Last().middlename,
-                                    TAB_NUM = string.Concat(attr21.Value, " ", attr27.Value),
-                                    ORG_ID = new Guid(attr24.Value)
-                                };
+                                      //bool resultG = Guid.TryParse(f2.personsList.Last().id, out ID),
+                                     ID = Guid.Parse(f2.personsList.Last().id),
+                                     LAST_NAME = f2.personsList.Last().lastname,
+                                     FIRST_NAME = f2.personsList.Last().firstname,
+                                     MIDDLE_NAME = f2.personsList.Last().middlename,
+                                     TAB_NUM = string.Concat(attr21.Value, " ", attr27.Value),
+                                     ORG_ID = new Guid(attr24.Value)
+                                 };
 
-                                GuidResult res2 = integrService.CreatePerson(sessionGUID, newperson);
-
+                                 GuidResult res2 = integrService.CreatePerson(sessionGUID, newperson);
+                                 */
+                               
                             }
 
 
-
+                           
                         }
                     }
 
