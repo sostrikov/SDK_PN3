@@ -140,7 +140,7 @@ namespace UsersParser
                 {
                     // получаем атрибут lastname
                     XmlNode attr1 = xnode.Attributes.GetNamedItem("lastname");
-                    Console.WriteLine($"{attr1.Value}\t");
+                   // Console.WriteLine($"{attr1.Value}\t");
 
                     // получаем атрибут firstname
                     XmlNode attr2 = xnode.Attributes.GetNamedItem("firstname");
@@ -168,13 +168,7 @@ namespace UsersParser
                         f2.personsList.Add(new Person() { lastname = attr1.Value, firstname = attr2.Value, middlename = attr3.Value, id = attr4.Value, birthday = attr5.Value, personguid = new Guid(attr6.Value) });
                     //personList.Add(new Person(attr1.Value, attr2.Value, attr3.Value, attr4.Value, attr5.Value, new Guid(attr6.Value)));
                    
-                    //Ищем сотрудника в базе Parsec Если находим пишем в файл =======================================================================================
-
-                      
-                  
-
-
-
+                   
                     //department
                     foreach (XmlNode xnode2 in xnode.ChildNodes)
                     {
@@ -208,18 +202,17 @@ namespace UsersParser
                             //Console.Write($"{attr28.Value}\t");
 
 
-                            Console.WriteLine($"prof- {attr21.Value} profguid- {attr22.Value} marks- {attr23.Value} struct_guid- {attr24.Value} vak_guid- {attr25.Value} guid- {attr26.Value}");
+                         //   Console.WriteLine($"prof- {attr21.Value} profguid- {attr22.Value} marks- {attr23.Value} struct_guid- {attr24.Value} vak_guid- {attr25.Value} guid- {attr26.Value}");
 
                             if (attr23.Value == "") //По основной должности или внешний совместитель  ||attr23.Value=="B"
                             {
-                                
+                                //Ищем сотрудника в базе Parsec Если находим пишем в файл ======================================================
                                 using (TextWriter tw = new StreamWriter("SavedParsecPersons.txt", true))
                                 {
                                     pers = integrService.FindPeople(sessionGUID, attr1.Value, attr2.Value, attr3.Value);
                                     try
                                     {
-                                        //Открываем сессию редактирования найденного сотрудника
-                                        GuidResult editSessionGuid = integrService.OpenPersonEditingSession(sessionGUID, pers.Last().ID);
+                                        
                                         OrgUnit[] parsecHierarhy = integrService.GetOrgUnitsHierarhy(sessionGUID);
                                         Stack<Guid> StaffOU = new Stack<Guid>();
                                         foreach (OrgUnit i in parsecHierarhy)
@@ -227,16 +220,21 @@ namespace UsersParser
                                             // Console.WriteLine($"ID: {i.ID} Name: {i.NAME} Parent: {i.PARENT_ID}");
                                             if (i.NAME == "Сотрудники") StaffOU.Push(i.ID); //Console.WriteLine($"It works: {i.ID}");
                                         }
-                                        
+                                        //Открываем сессию редактирования найденного сотрудника
+                                       // var ostrikov = integrService.FindPeople(sessionGUID, "Остриков", "Сергей", "Петрович");
+                                        //GuidResult editSessionGuid = integrService.OpenPersonEditingSession(sessionGUID, ostrikov.Last().ID);
+                                        GuidResult editSessionGuid = integrService.OpenPersonEditingSession(sessionGUID, pers.Last().ID);
                                         //Привязываем сотрудника к требуемому OU
                                         integrService.SetPersonOrgUnit(editSessionGuid.Value, StaffOU.Peek());
-
-                                        //Закрываем сессию редактирования найденного сотрудника
-                                        integrService.ClosePersonEditingSession(editSessionGuid.Value);
+                                        
+                                       
+                                       //Закрываем сессию редактирования найденного сотрудника
+                                       integrService.ClosePersonEditingSession(editSessionGuid.Value);
 
                                         Console.ForegroundColor = ConsoleColor.Green;
                                         Console.WriteLine($" Нашел: {pers.Last().LAST_NAME} {pers.Last().ID}");
-                                        tw.WriteLine($"{pers.Last().LAST_NAME}; {pers.Last().FIRST_NAME}; {pers.Last().MIDDLE_NAME}; {pers.Last().ID}; {attr24.Value}");
+                                       // tw.WriteLine($"{pers.Last().LAST_NAME}; {pers.Last().FIRST_NAME}; {pers.Last().MIDDLE_NAME}; {pers.Last().ID}; {attr24.Value}");
+                                        // Можно писать в файл асинхронно
                                         // await tw.WriteAsync($"{pers.Last().LAST_NAME} {pers.Last().ID}");
                                         // tw.Close();
                                         Console.ResetColor();

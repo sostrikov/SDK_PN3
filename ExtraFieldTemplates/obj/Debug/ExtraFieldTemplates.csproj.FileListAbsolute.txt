@@ -1,0 +1,10 @@
+D:\GIT\SDK_PN4.git\ExtraFieldTemplates\bin\Debug\ExtraFieldTemplates.exe.config
+D:\GIT\SDK_PN4.git\ExtraFieldTemplates\bin\Debug\ExtraFieldTemplates.exe
+D:\GIT\SDK_PN4.git\ExtraFieldTemplates\bin\Debug\ExtraFieldTemplates.pdb
+D:\GIT\SDK_PN4.git\ExtraFieldTemplates\bin\Debug\ParsecIntegrationClient.exe
+D:\GIT\SDK_PN4.git\ExtraFieldTemplates\bin\Debug\ParsecIntegrationClient.pdb
+D:\GIT\SDK_PN4.git\ExtraFieldTemplates\bin\Debug\ParsecIntegrationClient.exe.config
+D:\GIT\SDK_PN4.git\ExtraFieldTemplates\obj\Debug\ExtraFieldTemplates.csprojAssemblyReference.cache
+D:\GIT\SDK_PN4.git\ExtraFieldTemplates\obj\Debug\ExtraFieldTemplates.csproj.CopyComplete
+D:\GIT\SDK_PN4.git\ExtraFieldTemplates\obj\Debug\ExtraFieldTemplates.exe
+D:\GIT\SDK_PN4.git\ExtraFieldTemplates\obj\Debug\ExtraFieldTemplates.pdb

@@ -1,0 +1,10 @@
+D:\GIT\SDK_PN4.git\GetOrgUnitsHierarhyWithPersons\bin\Debug\GetOrgUnitsHierarhyWithPersons.exe.config
+D:\GIT\SDK_PN4.git\GetOrgUnitsHierarhyWithPersons\bin\Debug\GetOrgUnitsHierarhyWithPersons.exe
+D:\GIT\SDK_PN4.git\GetOrgUnitsHierarhyWithPersons\bin\Debug\GetOrgUnitsHierarhyWithPersons.pdb
+D:\GIT\SDK_PN4.git\GetOrgUnitsHierarhyWithPersons\bin\Debug\ParsecIntegrationClient.exe
+D:\GIT\SDK_PN4.git\GetOrgUnitsHierarhyWithPersons\bin\Debug\ParsecIntegrationClient.pdb
+D:\GIT\SDK_PN4.git\GetOrgUnitsHierarhyWithPersons\bin\Debug\ParsecIntegrationClient.exe.config
+D:\GIT\SDK_PN4.git\GetOrgUnitsHierarhyWithPersons\obj\Debug\GetOrgUnitsHierarhyWithPersons.csprojAssemblyReference.cache
+D:\GIT\SDK_PN4.git\GetOrgUnitsHierarhyWithPersons\obj\Debug\GetOrgUnitsHierarhyWithPersons.csproj.CopyComplete
+D:\GIT\SDK_PN4.git\GetOrgUnitsHierarhyWithPersons\obj\Debug\GetOrgUnitsHierarhyWithPersons.exe
+D:\GIT\SDK_PN4.git\GetOrgUnitsHierarhyWithPersons\obj\Debug\GetOrgUnitsHierarhyWithPersons.pdb
